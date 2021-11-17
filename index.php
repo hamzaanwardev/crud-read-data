@@ -34,50 +34,7 @@ include 'header.php';
                     <a href='delete-inline.php'>Delete</a>
                 </td>
             </tr>
-            <tr>
-                <td>2</td>
-                <td>Suresh</td>
-                <td>Punjab</td>
-                <td>BCOM</td>
-                <td>9876543210</td>
-                <td>
-                    <a href='edit.php'>Edit</a>
-                    <a href='delete-inline.php'>Delete</a>
-                </td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Suresh</td>
-                <td>Haryana</td>
-                <td>BSC</td>
-                <td>9876543210</td>
-                <td>
-                    <a href='edit.php'>Edit</a>
-                    <a href='delete-inline.php'>Delete</a>
-                </td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Krishna</td>
-                <td>Gujrat</td>
-                <td>BCA</td>
-                <td>9876543210</td>
-                <td>
-                    <a href='edit.php'>Edit</a>
-                    <a href='delete-inline.php'>Delete</a>
-                </td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>Rohit</td>
-                <td>Delhi</td>
-                <td>BCA</td>
-                <td>9876543210</td>
-                <td>
-                    <a href='edit.php'>Edit</a>
-                    <a href='delete-inline.php'>Delete</a>
-                </td>
-            </tr>
+           
         </tbody>
     </table>
     <?php } ?>
