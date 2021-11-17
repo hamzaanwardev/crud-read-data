@@ -23,7 +23,12 @@ include 'header.php';
         <th>Action</th>
         </thead>
         <tbody>
+            <?php
+                while($row = mysqli_fetch_assoc($result)) {
+            ?>
+
             <tr>
+
                 <td>1</td>
                 <td>Ramesh</td>
                 <td>Delhi</td>
@@ -34,7 +39,7 @@ include 'header.php';
                     <a href='delete-inline.php'>Delete</a>
                 </td>
             </tr>
-           
+           <?php } ?>
         </tbody>
     </table>
     <?php } ?>
