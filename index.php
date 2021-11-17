@@ -2,6 +2,9 @@
 include 'header.php';
 ?>
 <div id="main-content">
+    <?php
+        $conn = mysqli_connect("localhost","root","","crud") or die("Connection Failed");
+    ?>
     <h2>All Records</h2>
     <table cellpadding="7px">
         <thead>
