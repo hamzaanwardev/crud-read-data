@@ -13,12 +13,12 @@ $stu_phone = $_POST['sphone'];
 // making connection
 $conn = mysqli_connect("localhost","root","","my_first_db") or die("Connection Failed");
 
-$sql = "UPDATE student SET sname = '{$stu_name}', saddress = '{$stu_address}', sclass = '{$stu_class}', sphone = '{$stu_phone}' WHERE sid = {$stu_id}";
+$sql = "UPDATE students SET s_name = '{$stu_name}', s_address = '{$stu_address}', s_class = '{$stu_class}', s_phone = '{$stu_phone}' WHERE sid = {$stu_id}";
 
 $result = mysqli_query($conn, $sql) or die("Query Unsuccessful.");
 
 
-// redirection to home page after saving data
+// redirection to home page after updating data
 header("Location: http://localhost/Git/crud-read-data/index.php");
 
 
