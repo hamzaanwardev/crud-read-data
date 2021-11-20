@@ -3,7 +3,9 @@
 <?php
         $conn = mysqli_connect("localhost","root","","my_first_db") or die("Connection Failed");
 
-        $sql = "SELECT * FROM students JOIN studentsclass WHERE students.s_class = studentsclass.cid";
+        // using get method because we want to pick value from url bar form a variable in urlbar which is id
+        $stu_id = $GET['id'];
+        $sql = "SELECT * FROM students WHERE s_id = {}";
 
         $result = mysqli_query($conn, $sql) or die("Query Unsuccessful.");
 
@@ -38,6 +40,6 @@
       <input class="submit" type="submit" value="Update"/>
     </form>
 </div>
-</div>
+<?php } ?>
 </body>
 </html>
