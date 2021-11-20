@@ -1,19 +1,21 @@
 <?php include 'header.php'; ?>
 
+
+<div id="main-content">
+    <h2>Update Record</h2>
+
 <?php
         $conn = mysqli_connect("localhost","root","","my_first_db") or die("Connection Failed");
 
         // using get method because we want to pick value from url bar form a variable in urlbar which is id
         $stu_id = $GET['id'];
-        $sql = "SELECT * FROM students WHERE s_id = {}";
+        $sql = "SELECT * FROM students WHERE s_id = {$stu_id}";
 
         $result = mysqli_query($conn, $sql) or die("Query Unsuccessful.");
 
         if(mysqli_num_rows($result) > 0 ) {
     ?>
 
-<div id="main-content">
-    <h2>Update Record</h2>
     <form class="post-form" action="updatedata.php" method="post">
       <div class="form-group">
           <label>Name</label>
