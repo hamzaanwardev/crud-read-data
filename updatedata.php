@@ -13,7 +13,7 @@ $stu_phone = $_POST['sphone'];
 // making connection
 $conn = mysqli_connect("localhost","root","","my_first_db") or die("Connection Failed");
 
-$sql = "INSERT INTO students(s_name,s_address,s_class,s_phone) VALUES ('{$stu_name}', '{$stu_address}', '{$stu_class}','{$stu_phone}')";
+$sql = "UPDATE student SET sname = '{$stu_name}', saddress = '{$stu_address}', sclass = '{$stu_class}', sphone = '{$stu_phone}' WHERE sid = {$stu_id}";
 
 $result = mysqli_query($conn, $sql) or die("Query Unsuccessful.");
 
