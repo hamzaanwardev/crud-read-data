@@ -6,7 +6,7 @@ include 'header.php';
     <?php
         $conn = mysqli_connect("localhost","root","","my_first_db") or die("Connection Failed");
 
-        $sql = "SELECT * FROM student JOIN studentsclass WHERE students.s_class = studentsclass.cid";
+        $sql = "SELECT * FROM students JOIN studentsclass WHERE students.s_class = studentsclass.cid";
 
         $result = mysqli_query($conn, $sql) or die("Query Unsuccessful.");
 
@@ -32,8 +32,8 @@ include 'header.php';
                 <td><?php echo $row['sid']; ?></td>
                 <td><?php echo $row['s_name']; ?></td>
                 <td><?php echo $row['s_address']; ?></td>
-                <td><?php echo $row['s_class']; ?></td>
-                <td><?php echo $row['si_phone']; ?></td>
+                <td><?php echo $row['cname']; ?></td>
+                <td><?php echo $row['s_phone']; ?></td>
                 <td>
                     <a href='edit.php'>Edit</a>
                     <a href='delete-inline.php'>Delete</a>
@@ -42,7 +42,11 @@ include 'header.php';
            <?php } ?>
         </tbody>
     </table>
-    <?php } ?>
+    <?php }else{
+        echo"<h2>NO Record Found</h2>";
+    } 
+    mysqli_close($conn);
+    ?>
 </div>
 </div>
 </body>
