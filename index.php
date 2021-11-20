@@ -30,10 +30,10 @@ include 'header.php';
             <tr>
 
                 <td><?php echo $row['sid']; ?></td>
-                <td><?php ?></td>
-                <td><?php ?></td>
-                <td><?php ?></td>
-                <td><?php ?></td>
+                <td><?php echo $row['sname']; ?></td>
+                <td><?php echo $row['sid']; ?></td>
+                <td><?php echo $row['sid']; ?></td>
+                <td><?php echo $row['sid']; ?></td>
                 <td>
                     <a href='edit.php'>Edit</a>
                     <a href='delete-inline.php'>Delete</a>
