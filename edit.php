@@ -34,16 +34,15 @@
                 $result1 = mysqli_query($conn, $sql1) or die("Query Unsuccessful1.");
 
                 if(mysqli_num_rows($result1) > 0 ) {
-                    echo '<select name="sclass">
-                    <option value="" selected disabled>Select Class</option>';
+                    echo '<select name="s_class">';
                     while($row1 = mysqli_fetch_assoc($result1)){
-                        if($row['s_class'] == $row['cid']){
+                        if($row['s_class'] == $row1['cid']){
                             $select = "selected";
                         }else{
-                            $select = "selected";
+                            $select = "";
                         }
               
-             echo "<option value='{$row1['cid']}'>{$row1['cname']}</option>";
+             echo "<option {$select} value='{$row1['cid']}'>{$row1['cname']}</option>";
                     }
           echo "</select>";
                 }
