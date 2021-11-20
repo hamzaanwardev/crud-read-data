@@ -2,7 +2,7 @@
 
 
 <div id="main-content">
-    <h2>Update Record</h2>
+    <h2>UpdateRecord</h2>
 
 <?php
         $conn = mysqli_connect("localhost","root","","my_first_db") or die("Connection Failed");
@@ -34,7 +34,7 @@
                 $result1 = mysqli_query($conn, $sql1) or die("Query Unsuccessful1.");
 
                 if(mysqli_num_rows($result1) > 0 ) {
-                    echo '<select name="s_class">';
+                    echo '<select name="sclass">';
                     while($row1 = mysqli_fetch_assoc($result1)){
                         if($row['s_class'] == $row1['cid']){
                             $select = "selected";
