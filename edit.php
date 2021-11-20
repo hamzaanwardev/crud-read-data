@@ -39,8 +39,10 @@
                     <option value="" selected disabled>Select Class</option>';
                     while($row1 = mysqli_fetch_assoc($result1)){
               
-             echo '<option value="3">B.TECH</option>
-          </select>';
+             echo '<option value="{$row1["cid"]}">{$row1["cname"]}</option>';
+                    }
+          echo '</select>';
+                }
           ?>
       </div>
       <div class="form-group">
