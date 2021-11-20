@@ -8,7 +8,7 @@
         $conn = mysqli_connect("localhost","root","","my_first_db") or die("Connection Failed");
 
         // using get method because we want to pick value from url bar form a variable in urlbar which is id
-        $stu_id = $GET['id'];
+        $stu_id = $_GET['id'];
         $sql = "SELECT * FROM students WHERE s_id = {$stu_id}";
 
         $result = mysqli_query($conn, $sql) or die("Query Unsuccessful.");
@@ -30,11 +30,18 @@
       <div class="form-group">
           <label>Class</label>
           <select name="sclass">
-              <option value="" selected disabled>Select Class</option>
-              <option value="1">BCA</option>
-              <option value="2">BSC</option>
-              <option value="3">B.TECH</option>
-          </select>
+              <?php 
+                $sql1 = "SELECT * FROM studentsclass";
+                $result1 = mysqli_query($conn, $sql1) or die("Query Unsuccessful.");
+
+                if(mysqli_num_rows($result1) > 0 ) {
+                    echo '<select name="sclass">
+                    <option value="" selected disabled>Select Class</option>';
+                    while($row1 = mysqli_fetch_assoc($result1)){
+              
+             echo '<option value="3">B.TECH</option>
+          </select>';
+          ?>
       </div>
       <div class="form-group">
           <label>Phone</label>
