@@ -14,17 +14,18 @@
         $result = mysqli_query($conn, $sql) or die("Query Unsuccessful.");
 
         if(mysqli_num_rows($result) > 0 ) {
+            while($row = mysqli_fetch_assoc($result)){
     ?>
 
     <form class="post-form" action="updatedata.php" method="post">
       <div class="form-group">
           <label>Name</label>
-          <input type="hidden" name="sid" value=""/>
-          <input type="text" name="sname" value=""/>
+          <input type="hidden" name="sid" value="<?php echo $row['s_id']; ?>"/>
+          <input type="text" name="sname" value="<?php echo $row['s_name']; ?>"/>
       </div>
       <div class="form-group">
           <label>Address</label>
-          <input type="text" name="saddress" value=""/>
+          <input type="text" name="saddress" value="<?php echo $row['s_address']; ?>"/>
       </div>
       <div class="form-group">
           <label>Class</label>
@@ -37,11 +38,14 @@
       </div>
       <div class="form-group">
           <label>Phone</label>
-          <input type="text" name="sphone" value=""/>
+          <input type="text" name="sphone" value="<?php echo $row['s_phone']; ?>"/>
       </div>
       <input class="submit" type="submit" value="Update"/>
     </form>
 </div>
-<?php } ?>
+<?php 
+        }
+    }
+?>
 </body>
 </html>
