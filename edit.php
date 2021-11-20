@@ -9,9 +9,9 @@
 
         // using get method because we want to pick value from url bar form a variable in urlbar which is id
         $stu_id = $_GET['id'];
-        $sql = "SELECT * FROM students WHERE s_id = {$stu_id}";
+        $sql = "SELECT * FROM students WHERE sid = {$stu_id}";
 
-        $result = mysqli_query($conn, $sql) or die("Query Unsuccessful.");
+        $result = mysqli_query($conn, $sql) or die("Query Unsuccessful2.");
 
         if(mysqli_num_rows($result) > 0 ) {
             while($row = mysqli_fetch_assoc($result)){
@@ -29,19 +29,23 @@
       </div>
       <div class="form-group">
           <label>Class</label>
-          <select name="sclass">
               <?php 
                 $sql1 = "SELECT * FROM studentsclass";
-                $result1 = mysqli_query($conn, $sql1) or die("Query Unsuccessful.");
+                $result1 = mysqli_query($conn, $sql1) or die("Query Unsuccessful1.");
 
                 if(mysqli_num_rows($result1) > 0 ) {
                     echo '<select name="sclass">
                     <option value="" selected disabled>Select Class</option>';
                     while($row1 = mysqli_fetch_assoc($result1)){
+                        if($row['s_class'] == $row['cid']){
+                            $select = "selected";
+                        }else{
+                            $select = "selected";
+                        }
               
-             echo '<option value="{$row1["cid"]}">{$row1["cname"]}</option>';
+             echo "<option value='{$row1['cid']}'>{$row1['cname']}</option>";
                     }
-          echo '</select>';
+          echo "</select>";
                 }
           ?>
       </div>
