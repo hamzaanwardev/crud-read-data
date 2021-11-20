@@ -1,5 +1,15 @@
 <?php include 'header.php'; ?>
 
+<?php
+        $conn = mysqli_connect("localhost","root","","my_first_db") or die("Connection Failed");
+
+        $sql = "SELECT * FROM students JOIN studentsclass WHERE students.s_class = studentsclass.cid";
+
+        $result = mysqli_query($conn, $sql) or die("Query Unsuccessful.");
+
+        if(mysqli_num_rows($result) > 0 ) {
+    ?>
+
 <div id="main-content">
     <h2>Update Record</h2>
     <form class="post-form" action="updatedata.php" method="post">
