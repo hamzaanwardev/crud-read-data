@@ -12,4 +12,6 @@ $sql = "INSERT INTO students(s_name,s_address,s_class,s_phone) VALUES ('{$stu_na
 $result = mysqli_query($conn, $sql) or die("Query Unsuccessful.");
 
 header("Location: http://localhost/Git/crud-read-data/index.php");
+
+mysqli_close($conn);
 ?>
