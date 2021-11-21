@@ -9,6 +9,9 @@ $sql = "DELETE FROM students WHERE sid = {$stu_id}";
 
 $result = mysqli_query($conn, $sql) or die("Query Unsuccessful.");
 
-header ("Locattion: http//localhost/Git/crud-read-data/index.php");
+// header ("Location: http//localhost/Git/crud-read-data/index.php");
+header("Location: http://localhost/Git/crud-read-data/index.php");
+
+mysqli_close($conn);
 
 ?>
