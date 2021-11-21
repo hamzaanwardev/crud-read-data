@@ -3,10 +3,12 @@
 
 $stu_id = $_GET['id'];
 
-$conn = mysqli_connect("localhost","root","","my_first_db") or die("Connection Failed");
+include 'config.php';
 
-$sql = "SELECT * FROM students JOIN studentsclass WHERE students.s_class = studentsclass.cid";
+$sql = "DELETE FROM students WHERE sid = {$stu_id}";
 
 $result = mysqli_query($conn, $sql) or die("Query Unsuccessful.");
+
+header ("Locattion: http//localhost/Git/crud-read-data/index.php");
 
 ?>
