@@ -1,5 +1,23 @@
-<?php include 'header.php'; ?>
+<?php include 'header.php'; 
 
+if(isset($_POST['deletebtn'])){
+    include "config.php";
+    $stu_id = $_POST['sid'];
+
+    $sql = "DELETE FROM students WHERE sid = {$stu_id}";
+
+    $result = mysqli_query($conn, $sql) or die("Query Unsuccessful.");
+    
+    // header ("Location: http//localhost/Git/crud-read-data/index.php");
+    header("Location: http://localhost/Git/crud-read-data/index.php");
+    
+    mysqli_close($conn); 
+
+
+}
+
+
+?>
 
 <div id="main-content">
     <h2>Delete Record</h2>
