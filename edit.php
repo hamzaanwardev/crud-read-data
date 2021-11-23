@@ -20,7 +20,7 @@
     <form class="post-form" action="updatedata.php" method="post">
       <div class="form-group">
           <label>Name</label>
-          <input type="hidden" name="sid" value="<?php echo $row['s_id']; ?>"/>
+          <input type="hidden" name="sid" value="<?php echo $row['sid']; ?>"/>
           <input type="text" name="sname" value="<?php echo $row['s_name']; ?>"/>
       </div>
       <div class="form-group">

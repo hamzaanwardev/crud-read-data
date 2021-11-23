@@ -36,6 +36,7 @@
         <label>Class</label>
         <?php 
                 $sql1 = "SELECT * FROM studentsclass";
+               
                 $result1 = mysqli_query($conn, $sql1) or die("Query Unsuccessful1.");
 
                 if(mysqli_num_rows($result1) > 0 ) {
